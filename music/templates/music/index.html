@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+{% if all_albums %}
+    <h3>Details for albums below jus click</h3>
+    <ul>
+        {% for album in all_albums %}
+        <li><a href={% url 'music:detail' album.id %}>{{ album.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <h1>No albums yet</h1>
+{% endif %}
